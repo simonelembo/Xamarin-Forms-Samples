@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+        
+        <ResourceDictionary>
+            <x:Int32 x:Key="numItems">10000</x:Int32>
+            <x:Int32 x:Key="numClients">20</x:Int32>
+            <x:Int32 x:Key="paddingLeftFormViewCell">15</x:Int32>
+            <x:Int32 x:Key="addressesListRowHeight">200</x:Int32>
+        </ResourceDictionary>
+        
+
+	</Application.Resources>
+</Application>

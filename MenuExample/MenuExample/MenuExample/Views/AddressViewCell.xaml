@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.Views.AddressViewCell"
+             xmlns:localModels="using:MenuExample.Model;">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="{Binding Id}"/>
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="Elimina"
+            Clicked="btnEliminaClicked"/>
+        <Entry
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Placeholder="Via/Piazza/Strada/Loc."
+            Text="{Binding Address}"/>
+        <Entry
+            Grid.Row="2"
+            Grid.Column="0"
+            Placeholder="CAP"
+            Keyboard="Numeric"
+            Text="{Binding ZipCode}"/>
+        <Entry
+            Grid.Row="2"
+            Grid.Column="1"
+            Placeholder="Città"
+            Text="{Binding City}"/>
+        <Entry
+            Grid.Row="2"
+            Grid.Column="2"
+            Placeholder="Provincia"
+            Text="{Binding State}"/>
+    </Grid>
+</ViewCell>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.Pages.ContactsPage"
+			 Title="Lista Contatti">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="+" Clicked="btnAddNewClick" HorizontalOptions="End"/>
+            <SearchBar Text="{Binding SearchText}"></SearchBar>
+            <ListView ItemsSource="{Binding ContactsList}" ItemTapped="OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding DisplayName}"></Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

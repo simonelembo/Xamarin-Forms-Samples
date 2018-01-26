@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.Pages.MasterPage"
+             xmlns:localPages="using:MenuExample.Pages;"
+             xmlns:localModel="using:MenuExample.Model;"
+             Padding="0,40,0,0"
+             Icon="hamburger.png"
+             Title="Menu">
+    <StackLayout>
+        <ListView x:Name="listView">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type localModel:MasterPageItem}">
+                    <localModel:MasterPageItem Title="Contacts" IconSource="contacts.png" TargetType="{x:Type localPages:ContactsPage}" />
+                    <localModel:MasterPageItem Title="Items Remote Service" IconSource="todo.png" TargetType="{x:Type localPages:ItemsPage}" />
+                    <localModel:MasterPageItem Title="Incremental List View" IconSource="todo.png" TargetType="{x:Type localPages:IncrementalListViewPage}" />
+                    <localModel:MasterPageItem Title="Esito visita" IconSource="reminders.png" TargetType="{x:Type localPages:VisitResultPage}" />
+                    <localModel:MasterPageItem Title="Form dinamico" IconSource="reminders.png" TargetType="{x:Type localPages:DynamicFormPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

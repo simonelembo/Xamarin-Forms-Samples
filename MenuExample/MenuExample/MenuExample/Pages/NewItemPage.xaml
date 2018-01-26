@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.Pages.NewItemPage"
+             Title="Aggiungi Item">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="entryNewName" Placeholder="Nuovo Item"/>
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding IsBusy}"/>
+            <Button x:Name="btnSubmit" Text="Salva" Clicked="btnSubmitClick"/>
+            <Button x:Name="btnCancel" Text="Annulla" Clicked="btnCancelClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

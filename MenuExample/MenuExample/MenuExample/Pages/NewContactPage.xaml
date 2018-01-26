@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.Pages.NewContactPage"
+             Title="Aggiungi Contatto">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="entryNewName" Placeholder="Nome Cognome"/>
+            <Button Text="Salva" Clicked="btnSubmitClick"/>
+            <Button Text="Annulla" Clicked="btnCancelClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
