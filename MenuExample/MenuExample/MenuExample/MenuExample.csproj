@@ -22,6 +22,9 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\VisitResultContactViewCell.xaml.cs">
+      <DependentUpon>VisitResultContactViewCell.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\AddressViewCell.xaml.cs">
       <DependentUpon>AddressViewCell.xaml</DependentUpon>
     </Compile>

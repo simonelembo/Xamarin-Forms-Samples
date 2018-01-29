@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuExample.Views.VisitResultContactViewCell"
+             xmlns:localModels="using:MenuExample.Model;">
+    <Grid
+        Grid.Row="1"
+        Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="{Binding Id}"/>
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="Elimina"
+            Clicked="btnEliminaClicked"/>
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Nome:"/>
+        <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Placeholder="Nome contatto"
+            Text="{Binding Name}"/>
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Telefono:"/>
+        <Entry
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Placeholder="Telefono contatto"
+            Keyboard="Telephone"
+            Text="{Binding Phone}"/>
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Email:"/>
+        <Entry
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Placeholder="Email contatto"
+            Keyboard="Email"
+            Text="{Binding Email}"/>
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Web:"/>
+        <Entry
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Placeholder="Indirizzo sito web contatto"
+            Keyboard="Url"
+            Text="{Binding WebSite}"/>
+    </Grid>
+</ViewCell>

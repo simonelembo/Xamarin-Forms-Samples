@@ -21,9 +21,18 @@ namespace MenuExample.Views
 
         private void btnEliminaClicked(object sender, EventArgs e)
         {
-            VisitResultViewModel parentBindingContext = this.Parent.BindingContext as VisitResultViewModel;
-            parentBindingContext.AddressesList.Remove(BindingContext as AddressViewModel);
-            parentBindingContext.AddressesListHeight = parentBindingContext.AddressesList.Count * parentBindingContext.AddressesListRowHeight;
+            if (this.Parent.BindingContext.GetType().Equals(typeof(VisitResultViewModel)))
+            {
+                var parentBindingContext = this.Parent.BindingContext as VisitResultViewModel;
+                parentBindingContext.AddressesList.Remove(BindingContext as AddressViewModel);
+                parentBindingContext.AddressesListHeight = parentBindingContext.AddressesList.Count * parentBindingContext.AddressesListRowHeight;
+            }
+            if (this.Parent.BindingContext.GetType().Equals(typeof(DynamicFormViewModel)))
+            {
+                var parentBindingContext = this.Parent.BindingContext as DynamicFormViewModel;
+                parentBindingContext.AddressesList.Remove(BindingContext as AddressViewModel);
+                parentBindingContext.AddressesListHeight = parentBindingContext.AddressesList.Count * parentBindingContext.AddressesListRowHeight;
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
              xmlns:localViewModels="using:MenuExample.ViewModel;"
              xmlns:localViews="using:MenuExample.Views;">
     <ContentPage.BindingContext>
-        <localViewModels:VisitResultViewModel/>
+        <localViewModels:DynamicFormViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout
@@ -56,58 +56,33 @@
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Label
                             Grid.Row="0"
                             Grid.Column="0"
-                            Grid.ColumnSpan="2"
                             BackgroundColor="LightBlue"
-                            Text="Contatto"/>
-                        <Label
+                            Text="Contatti"/>
+                        <Button
                             Grid.Row="1"
                             Grid.Column="0"
-                            Text="Nome:"/>
-                        <Entry
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Placeholder="Nome contatto"
-                            Text="{Binding ContactName}"/>
-                        <Label
+                            Text="Aggiungi contatto"
+                            Clicked="BtnAddContact_Clicked"
+                            HorizontalOptions="Start"/>
+                        <ListView
                             Grid.Row="2"
                             Grid.Column="0"
-                            Text="Telefono:"/>
-                        <Entry
-                            Grid.Row="2"
-                            Grid.Column="1"
-                            Placeholder="Telefono contatto"
-                            Keyboard="Telephone"
-                            Text="{Binding ContactPhone}"/>
-                        <Label
-                            Grid.Row="3"
-                            Grid.Column="0"
-                            Text="Email:"/>
-                        <Entry
-                            Grid.Row="3"
-                            Grid.Column="1"
-                            Placeholder="Email contatto"
-                            Keyboard="Email"
-                            Text="{Binding ContactEmail}"/>
-                        <Label
-                            Grid.Row="4"
-                            Grid.Column="0"
-                            Text="Web:"/>
-                        <Entry
-                            Grid.Row="4"
-                            Grid.Column="1"
-                            Placeholder="Indirizzo sito web contatto"
-                            Keyboard="Url"
-                            Text="{Binding ContactWebSite}"/>
+                            ItemsSource="{Binding ContactsList}"
+                            RowHeight="{Binding ContactsListRowHeight}"
+                            HeightRequest="{Binding ContactsListHeight}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <localViews:VisitResultContactViewCell/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </Grid>
 
                     <Grid

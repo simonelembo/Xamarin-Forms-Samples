@@ -11,6 +11,7 @@
             <x:Int32 x:Key="numClients">20</x:Int32>
             <x:Int32 x:Key="paddingLeftFormViewCell">15</x:Int32>
             <x:Int32 x:Key="addressesListRowHeight">200</x:Int32>
+            <x:Int32 x:Key="contactsListRowHeight">300</x:Int32>
         </ResourceDictionary>
         
 
